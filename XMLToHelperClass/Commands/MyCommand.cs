@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TextManager.Interop;
-using System.Windows.Forms;
+using System.Windows;
 
 namespace XMLToHelperClass
 {
@@ -10,7 +10,7 @@ namespace XMLToHelperClass
         {
             var doc =await VS.Documents.GetActiveDocumentViewAsync();
 
-            Clipboard.SetText(doc.TextView.ToString());
+            Clipboard.SetText(doc.TextBuffer.CurrentSnapshot.GetText());
 
         }
     }
